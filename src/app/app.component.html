@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container">
+  <form (submit)=onSubmit()>
+    <input type="text" class="form-control" name="search" id="search" placeholder="Search for topics here" >
+    <!-- <button type="submit" class="btn btn-primary">Get Results</button> -->
+    </form>
+
+
+<div *ngIf="buttonPressed" >
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">News</th>
+        <th scope="col">Word Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of details">
+        <td>{{data.title}} </td>
+        <td [innerHTML]="data.snippet"> </td>
+        <td>{{data.wordcount}} </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
